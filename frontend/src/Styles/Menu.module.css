@@ -1,0 +1,91 @@
+/* src/Styles/Menu.module.css */
+
+.navbar {
+  background: linear-gradient(135deg, #7b2cbf, #f5a623); /* Morado difuminado */
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navList {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  margin-right: 2rem;
+}
+
+.navLink {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin: 0 1rem;
+  transition: color 0.3s, transform 0.3s, font-weight 0.3s; /* Añadido para transición suave */
+}
+
+.navLink:hover {
+  color: #fff3e0; /* Color de hover */
+  font-weight: bold; /* Efecto de negrilla */
+  transform: translateY(-2px); /* Efecto de movimiento */
+}
+
+/* Estilos para el menú desplegable */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  background-color: #fff;
+  height: 2px;
+  width: 25px;
+  margin: 3px 0;
+  transition: 0.4s;
+}
+
+.navbar .navList {
+  display: flex;
+}
+
+.navbar.active .navList {
+  display: block;
+  width: 100%;
+}
+
+.navbar.active .menu-toggle span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.navbar.active .menu-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar.active .menu-toggle span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media (max-width: 768px) {
+  .navList {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    background: linear-gradient(135deg, #7b2cbf, #f5a623); /* Morado difuminado */
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .navLink {
+    margin: 1rem 0;
+  }
+}

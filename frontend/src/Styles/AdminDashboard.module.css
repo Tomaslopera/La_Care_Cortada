@@ -1,0 +1,23 @@
+.container {
+    padding: 2rem;
+  }
+  
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .section {
+    padding: 1.5rem;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sectionTitle {
+    font-size: 1.8rem;
+    color: #444;
+    margin-bottom: 1rem;
+  }
+  

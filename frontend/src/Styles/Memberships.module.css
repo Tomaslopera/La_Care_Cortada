@@ -1,0 +1,109 @@
+
+.container {
+  padding: 2rem;
+  text-align: center; /* Centra el contenido horizontalmente */
+}
+
+/* Sección de Membresías */
+.membershipInfo {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas si es necesario */
+  gap: 2rem;
+  justify-content: center; /* Centra los elementos horizontalmente */
+  margin-bottom: 2rem;
+}
+
+.membershipTier {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 300px; /* Limita el ancho máximo de cada contenedor de membresía */
+  text-align: center; /* Centra el texto dentro del contenedor */
+  flex: 1; /* Permite que los elementos crezcan y se adapten al contenedor */
+  min-width: 250px; /* Asegura un ancho mínimo para los contenedores de membresía */
+}
+
+/* Sección de Actividades */
+.activitiesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center; /* Centra los círculos dentro del contenedor */
+  margin-bottom: 2rem;
+  border-top: 2px solid #ddd; /* Línea superior para separación */
+  padding-top: 2rem; /* Espacio superior para la separación */
+}
+
+/* Círculos de Actividades con Efecto de Desvanecido */
+.activityCircle {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #6a1b9a, #8e24aa); /* Degradado de color morado */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+}
+
+/* Separación con Línea para el Registro */
+.registrationSection {
+  border-top: 2px solid #ddd; /* Línea superior para separación */
+  padding-top: 2rem; /* Espacio superior para la separación */
+}
+
+/* Formulario de Registro */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 400px;
+  margin: 0 auto; /* Centra el formulario horizontalmente */
+}
+
+.input {
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.button {
+  padding: 0.8rem;
+  background-color: #6a1b9a; /* Este color puede mantenerse o cambiarse si lo deseas */
+  color: #fff;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #a15dcb;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: center; /* Centra los botones horizontalmente */
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.linkButton {
+  padding: 0.8rem 1.5rem;
+  background-color: #6a1b9a; /* Color de la barra del menú */
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.linkButton:hover {
+  background-color: #5c168a; /* Un tono más oscuro para el hover */
+}
