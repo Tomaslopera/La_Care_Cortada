@@ -1,5 +1,5 @@
-// src/pages/Login.jsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from '../styles/Auth.module.css';
 
 function Login() {
@@ -7,12 +7,14 @@ function Login() {
     <div className={styles.container}>
       <h1>Login</h1>
       <form className={styles.form}>
-        <input className={styles.input} type="email" placeholder="Email" />
-        <input className={styles.input} type="password" placeholder="Password" />
-        <button className={styles.button} type="submit">Login</button>
+        <input type="text" className={styles.input} placeholder="Username" />
+        <input type="password" className={styles.input} placeholder="Password" />
+        <button type="submit" className={styles.button}>Login</button>
       </form>
+      <p>Don't have an account? <Link to="/signup" className={styles.link}>Sign Up</Link></p>
     </div>
   );
 }
 
 export default Login;
+

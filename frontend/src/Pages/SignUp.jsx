@@ -5,12 +5,15 @@ import styles from '../styles/Auth.module.css';
 function Register() {
   return (
     <div className={styles.container}>
-      <h1>Register</h1>
+      <h1>Sign Up</h1>
       <form className={styles.form}>
         <input className={styles.input} type="text" placeholder="Name" />
+        <input className={styles.input} type="text" placeholder="Last Name" />
         <input className={styles.input} type="email" placeholder="Email" />
+        <input className={styles.input} type="email" placeholder="Confirm Email" />
         <input className={styles.input} type="password" placeholder="Password" />
-        <button className={styles.button} type="submit">Register</button>
+        <input className={styles.input} type="password" placeholder="Confirm Password" />
+        <button className={styles.button} type="submit">Sign Up</button>
       </form>
     </div>
   );

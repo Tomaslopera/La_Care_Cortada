@@ -12,6 +12,11 @@ import ContactUs from './Pages/ContactUs';
 import AdminDashboard from './Pages/AdminDashboard';
 import Login from './Pages/Login';
 import SignUp from './Pages/SignUp';
+import ManageModels from './Pages/ManageModels';
+import ManageProducts from './Pages/ManageProducts';
+import ManageEvents from './Pages/ManageEvents';
+// import ManagePhotoSales from './Pages/ManagePhotos';
+// import ManageMemberships from './Pages/ManageMemberships';
 
 function App() {
   return (
@@ -27,8 +32,13 @@ function App() {
           <Route path="/memberships" element={<Memberships />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/admin" element={<AdminDashboard />} />
-          {/* <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} /> */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/manage-models" element={<ManageModels />} />
+          <Route path="/manage-products" element={<ManageProducts />} />
+          <Route path="/manage-events" element={<ManageEvents />} />
+          {/* <Route path="/manage-photos" element={<ManagePhotos />} /> */}
+          {/* <Route path="/manage-memberships" element={<ManageMemberships />} /> */}
         </Routes>
       </div>
     </Router>
