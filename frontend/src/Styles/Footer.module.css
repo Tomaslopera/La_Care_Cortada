@@ -1,5 +1,5 @@
 .footer {
-    background: linear-gradient(135deg, #7b2cbf, #f5a623);
+    background: linear-gradient(135deg, rgba(40, 3, 70), #7754f8);
     padding: 1rem;
     display: flex;
     justify-content: space-between;

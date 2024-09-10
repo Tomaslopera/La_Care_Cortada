@@ -1,7 +1,7 @@
 /* Menu.module.css */
 
 .navbar {
-  background: linear-gradient(135deg, #7b2cbf, #f5a623);
+  background: linear-gradient(135deg, rgba(40, 3, 70), #7754f8);
   padding: 1rem;
   position: fixed;
   width: 100%;
@@ -36,12 +36,18 @@
   padding: 0;
   width: 10%;
   flex-direction: column;
-  background: linear-gradient(135deg, #7b2cbf, #f5a623);
+  background: linear-gradient(0deg, rgba(40, 3, 70), #7754f8);
   position: absolute;
   top: 100%;
   left: 0;
   text-align: center;
   border-bottom-right-radius: 3%;
+}
+
+@media (max-width: 900px) {
+  .navList {
+    width: 30%; /* Ajusta el ancho al 100% en pantallas pequeñas */
+  }
 }
 
 .navLink {

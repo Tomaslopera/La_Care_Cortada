@@ -1,8 +1,4 @@
-import { AiOutlineInstagram, AiOutlineMail } from "react-icons/ai";
-import { BsWhatsapp } from "react-icons/bs";
-import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
-import colores from "../Styles/colores";
+
 import styles from '../Styles/Footer.module.css';
 
 
