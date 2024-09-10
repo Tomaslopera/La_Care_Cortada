@@ -5,6 +5,7 @@ import styles from '../styles/Memberships.module.css';
 
 function Memberships() {
   return (
+    
     <div className={styles.container}>
       <h1>Exclusive Memberships</h1>
       
