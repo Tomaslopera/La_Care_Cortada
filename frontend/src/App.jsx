@@ -1,7 +1,5 @@
 // src/App.jsx
-import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './Components/Menu';
 import Home from './Pages/Home';
 import Models from './Pages/Models';
 import Products from './Pages/Products';
@@ -15,13 +13,15 @@ import SignUp from './Pages/SignUp';
 import ManageModels from './Pages/ManageModels';
 import ManageProducts from './Pages/ManageProducts';
 import ManageEvents from './Pages/ManageEvents';
+import Layout from './Components/Layout';
 // import ManagePhotoSales from './Pages/ManagePhotos';
 // import ManageMemberships from './Pages/ManageMemberships';
 
 function App() {
   return (
     <Router>
-      <Navbar />
+      
+      <Layout>
       <div style={{ paddingTop: '4rem' }}> {/* To avoid content overlapping with Navbar */}
         <Routes>
           <Route path="/" element={<Home />} />
@@ -41,6 +41,7 @@ function App() {
           {/* <Route path="/manage-memberships" element={<ManageMemberships />} /> */}
         </Routes>
       </div>
+      </Layout>
     </Router>
   );
 }

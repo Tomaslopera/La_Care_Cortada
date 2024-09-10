@@ -6,7 +6,9 @@
   flex-direction: column;
   align-items: center;
 }
-
+.container h1 {
+  color: black;
+}
 .filter {
   margin-bottom: 2rem;
   text-align: center;

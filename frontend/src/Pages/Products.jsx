@@ -1,5 +1,5 @@
 // src/pages/Products.jsx
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import styles from '../styles/Products.module.css';
 
 // Sample data with categories

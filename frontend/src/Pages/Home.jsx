@@ -1,6 +1,8 @@
+/* eslint-disable react/no-unescaped-entities */
 // src/pages/Home.jsx
-import React from 'react';
+
 import styles from '../styles/Home.module.css';
+
 
 // Sample data
 const featuredModels = ['Model 1', 'Model 2'];
@@ -9,6 +11,7 @@ const upcomingEvents = ['Event 1', 'Event 2'];
 
 function Home() {
   return (
+  
     <div className={styles.container}>
       <h1 className={styles.welcomeMessage}>Welcome to La Care Cortada's Empire</h1>
       <p>A welcome message from Andrea Mesa.</p>
@@ -39,6 +42,7 @@ function Home() {
         <p>Brief overview of the brand and its values...</p>
       </section>
     </div>
+    
   );
 }
 

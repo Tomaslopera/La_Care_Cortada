@@ -3,6 +3,9 @@
   padding: 2rem;
   text-align: center;
 }
+.container h1 {
+  color: black;
+}
 
 .membershipInfo {
   display: flex;

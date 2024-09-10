@@ -2,7 +2,9 @@
     text-align: center;
     padding: 2rem;
   }
-  
+  .container h1 {
+    color: black;
+  }
   .welcomeMessage {
     font-size: 2.5rem;
     font-weight: bold;
