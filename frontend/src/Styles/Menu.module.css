@@ -1,7 +1,5 @@
-/* src/Styles/Menu.module.css */
-
 .navbar {
-  background: linear-gradient(135deg, #7b2cbf, #f5a623); /* Morado difuminado */
+  background: linear-gradient(135deg, #7b2cbf, #f5a623);
   padding: 1rem;
   position: fixed;
   width: 100%;

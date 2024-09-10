@@ -1,4 +1,3 @@
-// src/components/Menu.jsx
 import  { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../Styles/Menu.module.css';
@@ -24,7 +23,6 @@ function Navbar() {
         <li><Link to="/events" className={styles.navLink}>Events</Link></li>
         <li><Link to="/photos" className={styles.navLink}>Photo Sales</Link></li>
         <li><Link to="/memberships" className={styles.navLink}>Memberships</Link></li>
-        <li><Link to="/contact" className={styles.navLink}>Contact Us</Link></li>
         <li><Link to="/admin" className={styles.navLink}>Admin Dashboard</Link></li>
       </ul>
     </nav>
@@ -32,4 +30,3 @@ function Navbar() {
 }
 
 export default Navbar;
-

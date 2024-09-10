@@ -11,7 +11,8 @@ const models = [
   { name: 'Model 5', photo: 'model1.jpg', portfolioLink: '#' },
   { name: 'Model 6', photo: 'model2.jpg', portfolioLink: '#' }, 
   { name: 'Model 7', photo: 'model1.jpg', portfolioLink: '#' },
-  { name: 'Model 8', photo: 'model2.jpg', portfolioLink: '#' }
+  { name: 'Model 8', photo: 'model2.jpg', portfolioLink: '#' }, 
+  
 ];
 
 function Models() {
