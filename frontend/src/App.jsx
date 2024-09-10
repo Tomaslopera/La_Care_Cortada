@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home';
 import Models from './Pages/Models';
 import Products from './Pages/Products';
+import Cart from './Pages/Cart';
 import Events from './Pages/Events';
 import PhotoSales from './Pages/PhotoSales';
 import Memberships from './Pages/Memberships';
@@ -32,6 +33,7 @@ function App() {
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/manage-models" element={<ManageModels />} />
           <Route path="/manage-products" element={<ManageProducts />} />
           <Route path="/manage-events" element={<ManageEvents />} />

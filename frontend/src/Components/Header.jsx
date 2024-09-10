@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../Styles/Menu.module.css';
 
@@ -24,6 +24,8 @@ function Navbar() {
         <li><Link to="/photos" className={styles.navLink}>Photo Sales</Link></li>
         <li><Link to="/memberships" className={styles.navLink}>Memberships</Link></li>
         <li><Link to="/admin" className={styles.navLink}>Admin Dashboard</Link></li>
+        <li><Link to="/cart" className={styles.navLink}>Cart</Link></li>
+
       </ul>
     </nav>
   );
