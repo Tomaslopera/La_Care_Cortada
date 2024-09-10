@@ -1,8 +1,6 @@
-// src/pages/Events.jsx
 import React from 'react';
 import styles from '../styles/Events.module.css';
 
-// Sample data
 const events = [
   { name: 'Event 1', date: '01/01/2024', location: 'City Hall', models: 'Model 1, Model 2', products: 'Product 1, Product 2' },
   { name: 'Event 2', date: '02/01/2024', location: 'Expo Center', models: 'Model 3, Model 4', products: 'Product 3, Product 4' }

@@ -1,8 +1,6 @@
-// src/pages/Products.jsx
 import  { useState } from 'react';
 import styles from '../styles/Products.module.css';
 
-// Sample data with categories
 const products = [
   { name: 'Product 1', description: 'Description of Product 1', price: '$20', image: 'product1.jpg', category: 'Lipsticks' },
   { name: 'Product 2', description: 'Description of Product 2', price: '$30', image: 'product2.jpg', category: 'Foundations' },
@@ -35,6 +33,7 @@ function Products() {
           <option value="All">All</option>
           <option value="Lipsticks">Lipsticks</option>
           <option value="Foundations">Foundations</option>
+          <option value="eye-shadows">Eye Shadows</option>
         </select>
       </div>
       <div className={styles.productList}>

@@ -1,8 +1,6 @@
-// src/pages/PhotoSales.jsx
 import React from 'react';
 import styles from '../styles/PhotoSales.module.css';
 
-// Sample data
 const photos = [
   { title: 'Photo 1', price: '$10', image: 'photo1.jpg' },
   { title: 'Photo 2', price: '$15', image: 'photo2.jpg' },

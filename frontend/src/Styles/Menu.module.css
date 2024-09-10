@@ -1,3 +1,5 @@
+/* Menu.module.css */
+
 .navbar {
   background: linear-gradient(135deg, #7b2cbf, #f5a623);
   padding: 1rem;
@@ -7,24 +9,49 @@
   left: 0;
   z-index: 1000;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menuToggle {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.menuToggle span {
+  background-color: #fff;
+  height: 2px;
+  width: 25px;
+  margin: 3px 0;
+  transition: 0.4s;
 }
 
 .navList {
-  display: flex;
-  justify-content: space-between;
+  display: none; /* Ocultamos los enlaces por defecto */
   list-style: none;
   margin: 0;
   padding: 0;
-  flex-wrap: wrap;
-  margin-right: 2rem;
+  width: 10%;
+  flex-direction: column;
+  background: linear-gradient(135deg, #7b2cbf, #f5a623);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  text-align: center;
+  border-bottom-right-radius: 3%;
 }
 
 .navLink {
   color: #fff;
   text-decoration: none;
   font-size: 1.1rem;
-  margin: 0 1rem;
-  transition: color 0.3s, transform 0.3s, font-weight 0.3s; /* Añadido para transición suave */
+  padding: 10px;
+  transition: color 0.3s, transform 0.3s, font-weight 0.3s; /* Transiciones suaves */
+  display: flex;
+  align-items: center;
 }
 
 .navLink:hover {
@@ -33,57 +60,53 @@
   transform: translateY(-2px); /* Efecto de movimiento */
 }
 
-/* Estilos para el menú desplegable */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.menu-toggle span {
-  background-color: #fff;
-  height: 2px;
-  width: 25px;
-  margin: 3px 0;
-  transition: 0.4s;
-}
-
-.navbar .navList {
-  display: flex;
-}
-
+/* Mostrar el menú desplegable cuando está activo */
 .navbar.active .navList {
-  display: block;
-  width: 100%;
+  display: flex; /* Mostrar los enlaces cuando el menú está abierto */
 }
 
-.navbar.active .menu-toggle span:nth-child(1) {
-  transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.navbar.active .menu-toggle span:nth-child(2) {
-  opacity: 0;
-}
-
-.navbar.active .menu-toggle span:nth-child(3) {
-  transform: rotate(45deg) translate(-5px, -6px);
-}
 
 @media (max-width: 768px) {
-  .navList {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    padding: 0;
-    background: linear-gradient(135deg, #7b2cbf, #f5a623); /* Morado difuminado */
+  .menuToggle {
+    display: flex; /* Mostrar el ícono del menú en pantallas pequeñas */
   }
 
-  .menu-toggle {
+  .navList {
+    display: none; /* Ocultar el menú por defecto en pantallas pequeñas */
+  }
+
+  .navbar.active .navList {
     display: flex;
   }
 
   .navLink {
     margin: 1rem 0;
   }
+
+  .rightIcons{
+    margin-right: 1rem;
+  }
 }
+
+.rightIcons {
+  display: flex;
+  margin-right: 3%;
+  align-items: center;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  background-size: cover;
+  background-color: transparent;
+}
+
+.cartIcon {
+  background: url('../cart-icon.svg') no-repeat center center;
+}
+
+.adminIcon {
+  background: url('../admin-icon.svg') no-repeat center center;
+}
+

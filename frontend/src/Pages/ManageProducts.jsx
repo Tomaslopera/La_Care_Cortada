@@ -1,91 +1,131 @@
-// src/pages/ManageProducts.jsx
 import React, { useState } from 'react';
 import styles from '../styles/ManageProducts.module.css';
 
+const initialProducts = [
+  { id: 1, name: 'Product 1', description: 'Description of Product 1', price: '$20', image: 'product1.jpg', category: 'Lipsticks' },
+  { id: 2, name: 'Product 2', description: 'Description of Product 2', price: '$30', image: 'product2.jpg', category: 'Foundations' }
+];
+
 function ManageProducts() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(initialProducts);
   const [editProduct, setEditProduct] = useState(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    description: '',
+    price: '',
+    image: '',
+    category: ''
+  });
 
-  const handleAddProduct = (product) => {
-    setProducts([...products, product]);
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleDeleteProduct = (productId) => {
-    setProducts(products.filter(product => product.id !== productId));
-  };
-
-  const handleUpdateProduct = (updatedProduct) => {
-    setProducts(products.map(product =>
-      product.id === updatedProduct.id ? updatedProduct : product
-    ));
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (editProduct) {
+      setProducts(products.map(product =>
+        product.id === editProduct.id ? { ...editProduct, ...formData } : product
+      ));
+    } else {
+      setProducts([...products, { id: Date.now(), ...formData }]);
+    }
+    setFormData({ name: '', description: '', price: '', image: '', category: '' });
     setEditProduct(null);
+  };
+
+  const handleEdit = (product) => {
+    setEditProduct(product);
+    setFormData({
+      name: product.name,
+      description: product.description,
+      price: product.price,
+      image: product.image,
+      category: product.category
+    });
+  };
+
+  const handleDelete = (id) => {
+    setProducts(products.filter(product => product.id !== id));
   };
 
   return (
     <div className={styles.container}>
       <h1>Manage Products</h1>
-      <div className={styles.formContainer}>
-        <ProductForm 
-          onAddProduct={handleAddProduct} 
-          onUpdateProduct={handleUpdateProduct} 
-          editProduct={editProduct} 
-          setEditProduct={setEditProduct} 
-        />
-      </div>
-      <div className={styles.productList}>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <label className={styles.label}>
+          Name
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            className={styles.input}
+            placeholder='Product Name'
+          />
+        </label>
+        <label className={styles.label}>
+          Description
+          <input
+            type="text"
+            name="description"
+            value={formData.description}
+            onChange={handleChange}
+            className={styles.input}
+            placeholder='Product Description'
+          />
+        </label>
+        <label className={styles.label}>
+          Price
+          <input
+            type="text"
+            name="price"
+            value={formData.price}
+            onChange={handleChange}
+            className={styles.input}
+            placeholder='Product Price'
+          />
+        </label>
+        <label className={styles.label}>
+          Image URL
+          <input
+            type="text"
+            name="image"
+            value={formData.image}
+            onChange={handleChange}
+            className={styles.input}
+            placeholder='Image URL'
+          />
+        </label>
+        <label className={styles.label}>
+          Category
+          <input
+            type="text"
+            name="category"
+            value={formData.category}
+            onChange={handleChange}
+            className={styles.input}
+            placeholder='Product Category'
+          />
+        </label>
+        <button type="submit" className={styles.button}>
+          {editProduct ? 'Update Product' : 'Add Product'}
+        </button>
+      </form>
+      <div className={styles.productsList}>
         {products.map(product => (
-          <div key={product.id} className={styles.productCard}>
+          <div key={product.id} className={styles.productItem}>
             <h2>{product.name}</h2>
-            <p>{product.description}</p>
-            <p>Price: ${product.price}</p>
-            <p>Category: {product.category}</p>
-            <img src={product.images[0]} alt={product.name} className={styles.productImage} />
-            <button onClick={() => setEditProduct(product)}>Edit</button>
-            <button onClick={() => handleDeleteProduct(product.id)}>Delete</button>
+            <p><strong>Description:</strong> {product.description}</p>
+            <p><strong>Price:</strong> {product.price}</p>
+            <p><strong>Category:</strong> {product.category}</p>
+            <img src={product.image} alt={product.name} className={styles.productImage} />
+            <button onClick={() => handleEdit(product)} className={styles.editButton}>Edit</button>
+            <button onClick={() => handleDelete(product.id)} className={styles.deleteButton}>Delete</button>
           </div>
         ))}
       </div>
     </div>
-  );
-}
-
-function ProductForm({ onAddProduct, onUpdateProduct, editProduct, setEditProduct }) {
-  const [name, setName] = useState(editProduct ? editProduct.name : '');
-  const [description, setDescription] = useState(editProduct ? editProduct.description : '');
-  const [price, setPrice] = useState(editProduct ? editProduct.price : '');
-  const [images, setImages] = useState(editProduct ? editProduct.images : []);
-  const [category, setCategory] = useState(editProduct ? editProduct.category : '');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const product = { id: editProduct ? editProduct.id : Date.now(), name, description, price, images, category };
-    if (editProduct) {
-      onUpdateProduct(product);
-    } else {
-      onAddProduct(product);
-    }
-    setName('');
-    setDescription('');
-    setPrice('');
-    setImages([]);
-    setCategory('');
-    setEditProduct(null);
-  };
-
-  return (
-    <form onSubmit={handleSubmit} className={styles.form}>
-      <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
-      <textarea placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
-      <input type="number" placeholder="Price" value={price} onChange={(e) => setPrice(e.target.value)} />
-      <input type="text" placeholder="Image URLs (comma separated)" value={images} onChange={(e) => setImages(e.target.value.split(','))} />
-      <select value={category} onChange={(e) => setCategory(e.target.value)}>
-        <option value="">Select Category</option>
-        <option value="lipsticks">Lipsticks</option>
-        <option value="foundations">Foundations</option>
-      </select>
-      <button type="submit">{editProduct ? 'Update Product' : 'Add Product'}</button>
-      {editProduct && <button type="button" onClick={() => setEditProduct(null)}>Cancel</button>}
-    </form>
   );
 }
 

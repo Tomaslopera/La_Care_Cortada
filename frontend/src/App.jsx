@@ -1,4 +1,3 @@
-// src/App.jsx
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home';
 import Models from './Pages/Models';
@@ -14,8 +13,8 @@ import ManageModels from './Pages/ManageModels';
 import ManageProducts from './Pages/ManageProducts';
 import ManageEvents from './Pages/ManageEvents';
 import Layout from './Components/Layout';
-// import ManagePhotoSales from './Pages/ManagePhotos';
-// import ManageMemberships from './Pages/ManageMemberships';
+import ManagePhotos from './Pages/ManagePhotos';
+import ManageMemberships from './Pages/ManageMemberships';
 
 function App() {
   return (
@@ -37,8 +36,8 @@ function App() {
           <Route path="/manage-models" element={<ManageModels />} />
           <Route path="/manage-products" element={<ManageProducts />} />
           <Route path="/manage-events" element={<ManageEvents />} />
-          {/* <Route path="/manage-photos" element={<ManagePhotos />} /> */}
-          {/* <Route path="/manage-memberships" element={<ManageMemberships />} /> */}
+          <Route path="/manage-photos" element={<ManagePhotos />} />
+          <Route path="/manage-memberships" element={<ManageMemberships />} />
         </Routes>
       </div>
       </Layout>
@@ -47,4 +46,3 @@ function App() {
 }
 
 export default App;
-

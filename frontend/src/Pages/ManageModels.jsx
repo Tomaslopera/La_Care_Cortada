@@ -52,7 +52,7 @@ function ManageModels() {
       <h1>Manage Models</h1>
       <form onSubmit={handleSubmit} className={styles.form}>
         <label className={styles.label}>
-          Name:
+          Name
           <input
             type="text"
             name="name"
@@ -63,7 +63,7 @@ function ManageModels() {
           />
         </label>
         <label className={styles.label}>
-          Photos URL:
+          Photos URL
           <input
             type="text"
             name="photos"
@@ -74,7 +74,7 @@ function ManageModels() {
           />
         </label>
         <label className={styles.label}>
-          Portfolio URL:
+          Portfolio URL
           <input
             type="text"
             name="portfolio"
@@ -85,7 +85,7 @@ function ManageModels() {
           />
         </label>
         <label className={styles.label}>
-          Booking Information:
+          Booking Information
           <textarea
             name="bookingInfo"
             value={formData.bookingInfo}

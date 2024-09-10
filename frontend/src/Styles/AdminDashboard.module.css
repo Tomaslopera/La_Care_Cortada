@@ -1,6 +1,7 @@
 /* src/styles/AdminDashboard.module.css */
 
 .container {
+  text-align: center;
   padding: 2rem;
 }
 
@@ -25,7 +26,7 @@
 }
 
 .sectionTitle {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: #fff;
   margin-bottom: 0.5rem;
 }
