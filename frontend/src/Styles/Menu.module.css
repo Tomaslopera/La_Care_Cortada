@@ -44,7 +44,15 @@
   border-bottom-right-radius: 3%;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
+  .navbar{
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box; /* Evita que padding/margin causen desbordamientos */
+    padding: 1rem; /* Ajusta el padding si es necesario */
+  }
+  
+
   .navList {
     width: 30%;
   }

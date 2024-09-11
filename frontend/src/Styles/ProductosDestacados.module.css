@@ -1,0 +1,73 @@
+/* Estilo del contenedor principal */
+.container {
+ display: flex;
+ width: 100%;
+}
+.container h1 {
+ color: #2a0549;
+ font-size: 2rem;
+}
+
+
+/* Estilo de la sección del título */
+.titleSection {
+ flex: 1;
+ padding: 10px;
+}
+
+/* Estilo del contenedor de la barra de desplazamiento */
+.scrollContainerWrapper {
+ flex: 1;
+ max-width: 80%; /* Ocupa un ancho máximo del 80% del contenedor */
+ overflow: hidden; /* Oculta el scroll vertical */
+}
+
+/* Estilo del contenedor de productos */
+.scrollContainer {
+ display: flex;
+ overflow-x: auto; /* Activa el scroll horizontal */
+ overflow-y: hidden; /* Oculta el scroll vertical */
+ gap: 20px; /* Espaciado entre los elementos */
+ padding: 20px;
+ scrollbar-width: thin; /* Scrollbar delgado para Firefox */
+ scrollbar-color: #000 transparent; /* Color negro para el scrollbar y transparente para la pista */
+}
+
+
+/* Estilo de las tarjetas de productos */
+.productCard {
+ width: 250px;
+ padding: 1rem;
+ height: 400px;
+ background-color: rgba(255, 255, 255, 0.8);
+ border-radius: 8px;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+ text-align: center;
+ flex-shrink: 0; /* Evita que las tarjetas se reduzcan cuando no caben */
+}
+
+.productImage {
+ width: 100%;
+ height: auto;
+ border-radius: 10px;
+ margin-bottom: 15px;
+}
+
+.productName {
+ font-size: 1.2rem;
+ font-weight: bold;
+ color: #2a0549;
+ margin-bottom: 10px;
+}
+
+.productDescription {
+ font-size: 0.9rem;
+ color: #666;
+ margin-bottom: 10px;
+}
+
+.productPrice {
+ font-size: 1rem;
+ font-weight: bold;
+ color: #333;
+}

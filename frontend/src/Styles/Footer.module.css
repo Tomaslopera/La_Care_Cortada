@@ -7,10 +7,10 @@
     color: #fff;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); 
     width: 100%;
-    max-width: 100%; 
     margin: 0;
     position: relative; 
-    box-sizing: border-box;
+    
+
   }
   
   .footerLeft, .footerRight {
@@ -30,13 +30,30 @@
   }
   
   .footerRight {
-    text-align: right;
+    display: flex;
+    flex-direction: column; /* Alinea el contenido en columna */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    text-align: center; /* Alinea el texto en el centro */
+    width: 45%; 
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
+  
   
   @media (max-width: 768px) {
     .footer {
       flex-direction: column;
       text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+      box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); 
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box; /* Evita que padding/margin causen desbordamientos */
+      padding: 1rem; /* Ajusta el padding si es necesario */
     }
   
     .footerLeft, .footerRight {
@@ -46,6 +63,7 @@
   
     .footerRight {
       text-align: center;
+
     }
   }
 
@@ -59,7 +77,7 @@
     border-radius: 4px;
     border: 1px solid rgba(255, 255, 255, 0.5);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; 
+    transition: background-color 0.4s, color 0.4s, box-shadow 0.4s; 
   }
   
   .linkButton:hover {

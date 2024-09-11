@@ -1,14 +1,17 @@
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import styles from '../styles/Home.module.css';
-import Img1 from '../Photos/Ppl/Img1.jpg';
+import ProductosDestacados from "../Components/ProductosDestacados";
+import img1 from '../Photos/Ppl/img1.jpg';
+import img2 from '../Photos/Ppl/img2.jpg';
+
 import Slider from "react-slick";
 
 const featuredModels = ['Model 1', 'Model 2'];
 const featuredProducts = ['Product 1', 'Product 2'];
 const upcomingEvents = ['Event 1', 'Event 2'];
 
-const images = [Img1,Img1];
+const images = [img1,img2];
 
 
 
@@ -45,6 +48,7 @@ function Home() {
       <p className={styles.welcomeParagraph}>
         Discover our premium makeup line, browse the latest fashion events, and meet the talented models who bring our brand to life. Whether you’re here for beauty tips, exclusive products, or just to admire the artistry of fashion, La Care Cortada has something for everyone.
       </p>
+      <ProductosDestacados></ProductosDestacados>
       
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>Featured Models</h2>
