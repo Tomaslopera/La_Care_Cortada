@@ -2,9 +2,10 @@
 .container {
   padding: 2rem;
   text-align: center;
+  background-color: #2a0549;
 }
 .container h1 {
-  color: #2a0549;
+  color: #f8f8f8;
 }
 
 .membershipInfo {
@@ -13,10 +14,11 @@
   gap: 2rem;
   justify-content: center;
   margin-bottom: 2rem;
+  color: #2a0549;
 }
 
 .membershipTier {
-  background-color: #f9f9f9;
+  background-color: #f9f7f7;
   border-radius: 8px;
   padding: 1.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
@@ -39,26 +41,18 @@
 .activityCircle {
   width: 130px;
   height: 130px;
-  background: rgba(40, 3, 70);
+  background: rgb(68, 18, 107);
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   font-size: 1rem;
+  padding: 1%;
   font-weight: bold;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.button {
-  padding: 0.8rem;
-  background-color: rgba(40, 3, 70); 
-  color: #fff;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
 
 .button:hover {
   background-color: #a15dcb;
@@ -89,5 +83,5 @@
 .linkButton:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); 
-
+  
 }
