@@ -1,17 +1,16 @@
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import styles from '../styles/Home.module.css';
+import Img1 from '../Photos/Ppl/Img1.jpg';
+import Slider from "react-slick";
 
 const featuredModels = ['Model 1', 'Model 2'];
 const featuredProducts = ['Product 1', 'Product 2'];
 const upcomingEvents = ['Event 1', 'Event 2'];
 
+const images = [Img1,Img1];
 
-const images = [
-  { src: "image1.jpg", alt: "Image 1" },
-  { src: "image2.jpg", alt: "Image 2" },
-  { src: "image3.jpg", alt: "Image 3" }
-];
+
 
 function Home() {
   const settings = {
@@ -25,15 +24,18 @@ function Home() {
   };
 
   return (
+    
   
     <div className={styles.container}>
+       
       <Slider {...settings} className={styles.carousel}>
         {images.map((image, index) => (
-          <div key={index}>
-            <img src={image.src} alt={image.alt} className={styles.carouselImage} />
-          </div>
+             <div key={index}>
+             <img src={image} alt={`Carousel Image ${index + 1}`} className={styles.carouselImage} />
+           </div>
         ))}
       </Slider>
+
       <h1 className={styles.welcomeMessage}>Welcome to La Care Cortada's Empire</h1>
       
       <p className={styles.welcomeParagraph}>
