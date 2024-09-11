@@ -53,11 +53,12 @@
   
   .modelItem {
     padding: 1rem;
-    background: linear-gradient(135deg, #7b2cbf, #f5a623);
+    background: linear-gradient(135deg, rgba(40, 3, 70), #7754f8);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 1rem;
     text-align: center;
+    color: white;
   }
   
   .editButton, .deleteButton {
@@ -71,18 +72,18 @@
   }
   
   .editButton {
-    background-color: #f39c12;
+    background-color: #886fe1;
   }
   
   .editButton:hover {
-    background-color: #e67e22;
+    background-color: #6a53bf;
   }
   
   .deleteButton {
-    background-color: #e74c3c;
+    background-color: #6a53bf;
   }
   
   .deleteButton:hover {
-    background-color: #c0392b;
+    background-color: #886fe1;
   }
     
