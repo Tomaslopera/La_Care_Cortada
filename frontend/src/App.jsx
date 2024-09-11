@@ -15,6 +15,7 @@ import ManageEvents from './Pages/ManageEvents';
 import Layout from './Components/Layout';
 import ManagePhotos from './Pages/ManagePhotos';
 import ManageMemberships from './Pages/ManageMemberships';
+import ContactUs from './Pages/ContactUs';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path="/manage-events" element={<ManageEvents />} />
           <Route path="/manage-photos" element={<ManagePhotos />} />
           <Route path="/manage-memberships" element={<ManageMemberships />} />
+          <Route path="/contact-us" element={<ContactUs />} />
         </Routes>
       </div>
       </Layout>

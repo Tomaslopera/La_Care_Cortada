@@ -1,5 +1,3 @@
-// src/pages/PhotoSales.jsx
-
 import { useState } from 'react';
 import styles from '../styles/PhotoSales.module.css';
 
