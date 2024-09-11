@@ -21,7 +21,7 @@
   text-align: center; 
   text-decoration: none; 
   color: rgba(40, 3, 70); 
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.4s, box-shadow 0.4s;
 }
 
 .section:hover {
