@@ -4,7 +4,9 @@
   text-align: center;
   padding: 2rem;
 }
-
+.container h1 {
+  color: #2a0549;
+}
 .dashboard {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
