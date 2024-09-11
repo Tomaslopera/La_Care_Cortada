@@ -1,6 +1,5 @@
 .container {
     padding: 2rem;
-    /* text-align: center; */
   }
   .container h1 {
     text-align: center;
@@ -12,14 +11,14 @@
     flex-direction: column;
     gap: 1.5rem;
     max-width: 600px;
-    margin: 0 auto; /* Centra el formulario horizontalmente */
+    margin: 0 auto;
   }
   
   .label {
     display: flex;
     flex-direction: column;
     font-size: 1.1rem;
-    color: #000; /* Texto blanco */
+    color: #000; 
   }
   
   .input, .textarea {
@@ -27,7 +26,7 @@
     font-size: 1.1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
-    background-color: #fff; /* Fondo blanco para inputs */
+    background-color: #fff;
   }
   
   .textarea {
@@ -36,8 +35,8 @@
   
   .button {
     padding: 0.8rem;
-    background-color: #7b2cbf; /* Color de fondo */
-    color: #fff; /* Texto blanco */
+    background-color: #7b2cbf;
+    color: #fff;
     font-size: 1.2rem;
     border: none;
     border-radius: 4px;
@@ -45,7 +44,7 @@
   }
   
   .button:hover {
-    background-color: #6a1b9a; /* Color más oscuro en hover */
+    background-color: #6a1b9a;
   }
   
   .modelsList {
@@ -72,18 +71,18 @@
   }
   
   .editButton {
-    background-color: #f39c12; /* Color de botón de edición */
+    background-color: #f39c12;
   }
   
   .editButton:hover {
-    background-color: #e67e22; /* Color más oscuro en hover */
+    background-color: #e67e22;
   }
   
   .deleteButton {
-    background-color: #e74c3c; /* Color de botón de eliminación */
+    background-color: #e74c3c;
   }
   
   .deleteButton:hover {
-    background-color: #c0392b; /* Color más oscuro en hover */
+    background-color: #c0392b;
   }
     

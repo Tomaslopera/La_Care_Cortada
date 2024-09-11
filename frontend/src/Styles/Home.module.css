@@ -1,32 +1,45 @@
 .container {
-    text-align: center;
-    padding: 2rem;
-  }
-  .container h1 {
-    color: #2a0549;
-  }
-  .welcomeMessage {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #2a0549;
-  }
-  
-  .section {
-    margin: 2rem 0;
-  }
-  
-  .sectionTitle {
-    font-size: 1.8rem;
-    color: #2a0549;
-    margin-bottom: 1rem;
-  }
-  
-  .featuredItem {
-    display: inline-block;
-    margin: 1rem;
-    padding: 1rem;
-    background-color: #8ed7d8;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
+  text-align: center;
+  padding: 2rem;
+}
+
+.container h1 {
+  color: #2a0549;
+}
+
+.welcomeMessage {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2a0549;
+}
+
+.welcomeParagraph {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2a0549;
+  margin-top: 1rem;
+  text-align: center;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+.section {
+  margin: 2rem 0;
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  color: #2a0549;
+  margin-bottom: 1rem;
+}
+
+.featuredItem {
+  display: inline-block;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #8ed7d8;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

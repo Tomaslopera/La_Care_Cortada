@@ -1,35 +1,38 @@
-// src/pages/Memberships.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../styles/Memberships.module.css';
 
 function Memberships() {
   return (
-    
     <div className={styles.container}>
       <h1>Exclusive Memberships</h1>
       
       <div className={styles.membershipInfo}>
-        {/* Información sobre las membresías */}
         <div className={styles.membershipTier}>
           <h2>Basic Membership</h2>
-          <p>Access to basic content and discounts.</p>
+          <p>Gain access to our standard collection of fashion and event photos, along with occasional member-only discounts on digital downloads and prints. Ideal for fashion enthusiasts wanting a glimpse into exclusive events.</p>
+          <p><strong>Price:</strong> $9.99/month</p>
         </div>
         <div className={styles.membershipTier}>
           <h2>Premium Membership</h2>
-          <p>Includes all basic benefits plus premium content.</p>
+          <p>Unlock all the benefits of Basic Membership, plus access to premium content including backstage photos, high-end runway shots, and early access to new releases. Get larger discounts on both digital and printed formats.</p>
+          <p><strong>Price:</strong> $19.99/month</p>
         </div>
         <div className={styles.membershipTier}>
           <h2>Elite Membership</h2>
-          <p>All premium benefits plus exclusive access and discounts.</p>
+          <p>The ultimate experience for true fashion aficionados. Enjoy everything in Premium Membership, with additional perks such as exclusive behind-the-scenes content, private photo sessions, and top-tier discounts on all formats. Be the first to receive invitations to exclusive fashion events and sales.</p>
+          <p><strong>Price:</strong> $49.99/month</p>
         </div>
       </div>
       
       <div className={styles.activitiesContainer}>
-        {/* Actividades no legales */}
-        <div className={styles.activityCircle}>Activity 1</div>
-        <div className={styles.activityCircle}>Activity 2</div>
-        <div className={styles.activityCircle}>Activity 3</div>
+        <div className={styles.activityCircle}>Exclusive Content</div>
+        <div className={styles.activityCircle}>VIP Events</div>
+        <div className={styles.activityCircle}>Personalized Shoots</div>
+        <div className={styles.activityCircle}>Priority Releases</div>
+        <div className={styles.activityCircle}>Behind the Scenes</div>
+        <div className={styles.activityCircle}>Early Access Sales</div>
+        <div className={styles.activityCircle}>Special Discounts</div>
       </div>
 
       <div className={styles.buttonsContainer}>
@@ -42,13 +45,3 @@ function Memberships() {
 }
 
 export default Memberships;
-
-
-// <div className={styles.registrationSection}>
-{/* <form className={styles.form}>
-<input className={styles.input} type="text" placeholder="Name" />
-<input className={styles.input} type="email" placeholder="Email" />
-<input className={styles.input} type="password" placeholder="Password" />
-<button className={styles.button} type="submit">Sign Up</button>
-</form>
-</div> */}

@@ -1,5 +1,3 @@
-/* Menu.module.css */
-
 .navbar {
   background: linear-gradient(135deg, rgba(40, 3, 70), #7754f8);
   padding: 1rem;
@@ -32,7 +30,7 @@
 }
 
 .navList {
-  display: none; /* Ocultamos los enlaces por defecto */
+  display: none;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -48,7 +46,7 @@
 
 @media (max-width: 1000px) {
   .navList {
-    width: 30%; /* Ajusta el ancho al 100% en pantallas pequeñas */
+    width: 30%;
   }
 }
 
@@ -57,30 +55,29 @@
   text-decoration: none;
   font-size: 1.1rem;
   padding: 10px;
-  transition: color 0.3s, transform 0.3s, font-weight 0.3s; /* Transiciones suaves */
+  transition: color 0.3s, transform 0.3s, font-weight 0.3s;
   display: flex;
   align-items: center;
 }
 
 .navLink:hover {
-  color: #fff3e0; /* Color de hover */
-  font-weight: bold; /* Efecto de negrilla */
-  transform: translateY(-2px); /* Efecto de movimiento */
+  color: #fff3e0;
+  font-weight: bold;
+  transform: translateY(-2px);
 }
 
-/* Mostrar el menú desplegable cuando está activo */
 .navbar.active .navList {
-  display: flex; /* Mostrar los enlaces cuando el menú está abierto */
+  display: flex;
 }
 
 
 @media (max-width: 768px) {
   .menuToggle {
-    display: flex; /* Mostrar el ícono del menú en pantallas pequeñas */
+    display: flex;
   }
 
   .navList {
-    display: none; /* Ocultar el menú por defecto en pantallas pequeñas */
+    display: none;
   }
 
   .navbar.active .navList {
