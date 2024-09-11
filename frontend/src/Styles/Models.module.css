@@ -7,7 +7,7 @@
   align-items: center;
 }
 .container h1 {
-  color: black;
+  color: rgba(40, 3, 70);
 }
 
 .modelList {
@@ -43,8 +43,8 @@
   display: inline-block;
   padding: 0.5rem 1rem;
   margin-top: 1rem;
-  background: linear-gradient(135deg, #7b2cbf, #f5a623); /* Mismo gradiente que la barra de menú */
-  color: #fff;
+  background:  #8ed7d8;
+  color:  rgba(40, 3, 70);
   text-decoration: none;
   border-radius: 5px;
   font-size: 1rem;
@@ -52,7 +52,8 @@
 }
 
 .portfolioButton:hover {
-  background: linear-gradient(135deg, #7b2cbf, #f5a623); /* Mismo gradiente al hacer hover */
+  background:  #8ed7d8;
+  color:  rgba(40, 3, 70);
   transform: scale(1.05);
   color: #fff;
 }

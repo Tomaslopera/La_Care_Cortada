@@ -9,8 +9,8 @@ const events = [
 function Events() {
   return (
     <div className={styles.container}>
-      <h1>Fashion Events</h1>
-      <div className={styles.eventList}>
+    <div className={styles.eventList}>
+      <h1>Our Fashion Events</h1>
         {events.map((event, index) => (
           <div key={index} className={styles.eventCard}>
             <h2 className={styles.eventName}>{event.name}</h2>

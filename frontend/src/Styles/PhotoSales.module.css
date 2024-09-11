@@ -7,7 +7,7 @@
   align-items: center; /* Centra el contenido horizontalmente */
 }
 .container h1 {
-  color: black;
+  color: rgba(40, 3, 70);
 }
 
 .photoList {

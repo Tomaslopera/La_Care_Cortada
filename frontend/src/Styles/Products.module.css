@@ -5,7 +5,7 @@
   align-items: center;
 }
 .container h1 {
-  color: black;
+  color: rgba(40, 3, 70);
 }
 .filter {
   margin-bottom: 2rem;

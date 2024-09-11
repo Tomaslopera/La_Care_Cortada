@@ -12,6 +12,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
+  
 }
 
 .menuToggle {
@@ -34,7 +36,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  width: 10%;
+  width: 15%;
   flex-direction: column;
   background: linear-gradient(0deg, rgba(40, 3, 70), #7754f8);
   position: absolute;
@@ -44,7 +46,7 @@
   border-bottom-right-radius: 3%;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .navList {
     width: 30%; /* Ajusta el ancho al 100% en pantallas pequeñas */
   }
@@ -92,6 +94,7 @@
   .rightIcons{
     margin-right: 1rem;
   }
+  
 }
 
 .rightIcons {
