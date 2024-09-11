@@ -1,13 +1,18 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import styles from '../Styles/Menu.module.css';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation(); 
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location]);
 
   return (
     <nav className={`${styles.navbar} ${isMenuOpen ? styles.active : ''}`}>
