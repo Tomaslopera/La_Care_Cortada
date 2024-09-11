@@ -39,7 +39,7 @@
 .activityCircle {
   width: 100px;
   height: 100px;
-  background: linear-gradient(135deg, #6a1b9a, #8e24aa); /* Degradado de color morado */
+  background: linear-gradient(135deg, #6a1b9a, #8e24aa);
   color: #fff;
   display: flex;
   align-items: center;
@@ -47,7 +47,7 @@
   border-radius: 50%;
   font-size: 1rem;
   font-weight: bold;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .button {
