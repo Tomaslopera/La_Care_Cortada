@@ -1,10 +1,5 @@
-/* eslint-disable react/no-unescaped-entities */
-// src/pages/Home.jsx
-
 import styles from '../styles/Home.module.css';
 
-
-// Sample data
 const featuredModels = ['Model 1', 'Model 2'];
 const featuredProducts = ['Product 1', 'Product 2'];
 const upcomingEvents = ['Event 1', 'Event 2'];
@@ -14,7 +9,14 @@ function Home() {
   
     <div className={styles.container}>
       <h1 className={styles.welcomeMessage}>Welcome to La Care Cortada's Empire</h1>
-      <p>A welcome message from Andrea Mesa.</p>
+      
+      <p className={styles.welcomeParagraph}>
+        Step into the bold and glamorous world of Andrea Mesa, better known as La Care Cortada. As a dominant figure in the makeup and fashion industry, she invites you to explore her empire, where beauty meets ambition. From managing top-tier models to hosting exclusive fashion events. Andrea’s brand offers more than just makeup—it’s a lifestyle, one that transcends the ordinary.
+      </p>
+
+      <p className={styles.welcomeParagraph}>
+        Discover our premium makeup line, browse the latest fashion events, and meet the talented models who bring our brand to life. Whether you’re here for beauty tips, exclusive products, or just to admire the artistry of fashion, La Care Cortada has something for everyone.
+      </p>
       
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>Featured Models</h2>
@@ -39,7 +41,9 @@ function Home() {
 
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>About the Brand</h2>
-        <p>Brief overview of the brand and its values...</p>
+        <p className={styles.welcomeParagraph}>
+          Founded by the infamous Andrea Mesa, La Care Cortada is not your average makeup brand. It represents the fierce, the rebellious, and those unafraid to make a statement. Andrea’s journey from the streets to stardom has shaped the brand’s unique identity, blending luxury makeup with an edgy, underground vibe.
+        </p>
       </section>
     </div>
     

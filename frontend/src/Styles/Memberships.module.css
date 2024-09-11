@@ -39,7 +39,11 @@
 .activityCircle {
   width: 100px;
   height: 100px;
+<<<<<<< HEAD
   background: rgba(40, 3, 70);
+=======
+  background: linear-gradient(135deg, #6a1b9a, #8e24aa);
+>>>>>>> TomasL
   color: #fff;
   display: flex;
   align-items: center;
@@ -47,7 +51,7 @@
   border-radius: 50%;
   font-size: 1rem;
   font-weight: bold;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .button {
