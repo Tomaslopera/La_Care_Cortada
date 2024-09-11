@@ -3,14 +3,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh; 
+  background-size: cover;
+  background: url('../Photos/products/background.jpg') no-repeat center center;
 }
+
 .container h1 {
-  color: rgba(40, 3, 70);
+  color: white;
 }
 .filter {
   margin-bottom: 2rem;
   text-align: center;
-  color: #7b2cbf; /* Color del texto igual al de la barra de menú */
+  color: white; 
 }
 
 .filter label {
@@ -20,19 +24,19 @@
 
 .filterSelect {
   padding: 0.5rem;
-  border: 1px solid #7b2cbf; /* Borde del selector igual al color del menú */
+  border: 1px solid #7b2cbf;
   border-radius: 5px;
-  background-color: #f4f0f7; /* Fondo del selector en un tono más claro */
+  background-color: #f4f0f7;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s, border-color 0.3s;
-  color: #333; /* Color del texto en el selector */
+  color: #333; 
 }
 
 .filterSelect:hover,
 .filterSelect:focus {
-  border-color: #5a1e8c; /* Color de borde más oscuro en hover/focus */
-  background-color: #e0d8f1; /* Fondo más oscuro en hover/focus */
+  border-color: #5a1e8c; 
+  background-color: #e0d8f1;
 }
 
 .productList {
@@ -45,7 +49,7 @@
 .productCard {
   width: 250px;
   padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.8); /* Blanco con transparencia */
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
