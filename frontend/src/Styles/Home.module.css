@@ -13,6 +13,7 @@
   font-size: 2.5rem;
   font-weight: bold;
   color: #2a0549;
+  padding: 1rem;
 }
 
 .welcomeParagraph {
@@ -69,4 +70,33 @@
   .carouselImage {
     height: 35vh; /* Ajuste para pantallas móviles */
   }
+}
+
+.modelList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center; /* Centra los elementos dentro de la lista */
+}
+
+.modelCard {
+  width: 300px;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.8); /* Blanco con transparencia */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.modelPhoto {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.modelName {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  color: #333;
 }

@@ -4,8 +4,15 @@ import styles from '../styles/Home.module.css';
 import ProductosDestacados from "../Components/ProductosDestacados";
 import img1 from '../Photos/Ppl/img1.jpg';
 import img2 from '../Photos/Ppl/img2.jpg';
-
 import Slider from "react-slick";
+import model1 from '../Photos/Modelos/model1.jpg';
+import model2 from '../Photos/Modelos/model2.jpg';
+import model3 from '../Photos/Modelos/model3.jpg';
+// Sample data
+const models = [
+  { name: 'Jenn Lewandofss', photo: model1 , portfolioLink: '#' },
+  { name: 'Karolina Hemps', photo: model2, portfolioLink: '#' }, 
+];
 
 const featuredModels = ['Model 1', 'Model 2'];
 const featuredProducts = ['Product 1', 'Product 2'];
@@ -49,13 +56,18 @@ function Home() {
         Discover our premium makeup line, browse the latest fashion events, and meet the talented models who bring our brand to life. Whether you’re here for beauty tips, exclusive products, or just to admire the artistry of fashion, La Care Cortada has something for everyone.
       </p>
       <ProductosDestacados></ProductosDestacados>
+      <h1 className={styles.welcomeMessage}>Featured Models</h1>
       
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>Featured Models</h2>
-        {featuredModels.map((model, index) => (
-          <div key={index} className={styles.featuredItem}>{model}</div>
+      
+      <div className={styles.modelList}>
+        {models.map((model, index) => (
+          <div key={index} className={styles.modelCard}>
+            <img className={styles.modelPhoto} src={model.photo} alt={model.name} />
+            <h2 className={styles.modelName}>{model.name}</h2>
+            <a className={styles.portfolioButton} href={model.portfolioLink}>View Portfolio</a>
+          </div>
         ))}
-      </section>
+      </div>
 
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>About the Brand</h2>

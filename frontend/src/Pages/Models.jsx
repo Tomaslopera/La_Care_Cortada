@@ -1,18 +1,14 @@
 // src/pages/Models.jsx
 import React from 'react';
 import styles from '../styles/Models.module.css';
-
+import model1 from '../Photos/Modelos/model1.jpg';
+import model2 from '../Photos/Modelos/model2.jpg';
+import model3 from '../Photos/Modelos/model3.jpg';
 // Sample data
 const models = [
-  { name: 'Model 1', photo: 'model1.jpg', portfolioLink: '#' },
-  { name: 'Model 2', photo: 'model2.jpg', portfolioLink: '#' }, 
-  { name: 'Model 3', photo: 'model1.jpg', portfolioLink: '#' },
-  { name: 'Model 4', photo: 'model2.jpg', portfolioLink: '#' }, 
-  { name: 'Model 5', photo: 'model1.jpg', portfolioLink: '#' },
-  { name: 'Model 6', photo: 'model2.jpg', portfolioLink: '#' }, 
-  { name: 'Model 7', photo: 'model1.jpg', portfolioLink: '#' },
-  { name: 'Model 8', photo: 'model2.jpg', portfolioLink: '#' }, 
-  
+  { name: 'Jenn Lewandofss', photo: model1 , portfolioLink: '#' },
+  { name: 'Karolina Hemps', photo: model2, portfolioLink: '#' }, 
+  { name: 'Catherine Ruth', photo: model3, portfolioLink: '#' },
 ];
 
 function Models() {

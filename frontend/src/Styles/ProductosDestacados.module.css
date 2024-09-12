@@ -44,7 +44,7 @@
  height: 400px;
  background-color: rgba(255, 255, 255, 0.8);
  border-radius: 8px;
- box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
  text-align: center;
  flex-shrink: 0; 
 }
@@ -95,6 +95,6 @@
 
  .productCard {
   height: auto;
-   width: 100%; /* Las tarjetas de productos ocupan el 100% del ancho */
+   width: 90%; /* Las tarjetas de productos ocupan el 100% del ancho */
  }
 }

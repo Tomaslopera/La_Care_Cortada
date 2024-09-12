@@ -18,7 +18,7 @@
 }
 
 .modelCard {
-  width: 200px;
+  width: 300px;
   padding: 1rem;
   background-color: rgba(255, 255, 255, 0.8); /* Blanco con transparencia */
   border-radius: 10px;
@@ -28,7 +28,7 @@
 
 .modelPhoto {
   width: 100%;
-  height: 200px;
+  height: 300px;
   object-fit: cover;
   border-radius: 8px;
 }
