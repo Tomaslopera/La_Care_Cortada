@@ -1,6 +1,6 @@
 // src/pages/Cart.jsx
 import React from 'react';
-import styles from '../styles/Cart.module.css';
+import styles from '../Styles/Cart.module.css';
 
 // Sample data for cart items
 const cartItems = [

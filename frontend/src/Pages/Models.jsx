@@ -1,6 +1,6 @@
 // src/pages/Models.jsx
 import React from 'react';
-import styles from '../styles/Models.module.css';
+import styles from '../Styles/Models.module.css';
 import model1 from '../Photos/Modelos/model1.jpg';
 import model2 from '../Photos/Modelos/model2.jpg';
 import model3 from '../Photos/Modelos/model3.jpg';

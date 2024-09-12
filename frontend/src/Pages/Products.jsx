@@ -1,5 +1,5 @@
 import  { useState } from 'react';
-import styles from '../styles/Products.module.css';
+import styles from '../Styles/Products.module.css';
 import superstayMatteInk from '../photos/products/superstay-matte-ink.webp';
 import fentyProFiltrFoundation from '../photos/products/fenty-pro-filtr-foundation.png';
 import nakedHeatPalette from '../photos/products/naked-heat-palette.jpg';

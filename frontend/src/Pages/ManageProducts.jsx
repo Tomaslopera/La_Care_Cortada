@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '../styles/ManageProducts.module.css';
+import styles from '../Styles/ManageProducts.module.css';
 
 const initialProducts = [
   { id: 1, name: 'Product 1', description: 'Description of Product 1', price: '$20', image: 'product1.jpg', category: 'Lipsticks' },

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '../styles/ManageMemberships.module.css';
+import styles from '../Styles/ManageMemberships.module.css';
 
 const initialMemberships = [
   { id: 1, name: 'Basic Membership', description: 'Access to basic content and discounts.' },

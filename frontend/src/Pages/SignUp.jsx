@@ -1,6 +1,6 @@
 // src/pages/Register.jsx
 import React from 'react';
-import styles from '../styles/Auth.module.css';
+import styles from '../Styles/Auth.module.css';
 
 function Register() {
   return (
