@@ -25,8 +25,7 @@ function ProductosDestacados() {
  return (
    <div className={styles.container}>
      <div className={styles.titleSection}>
-       <h1>Productos Destacados</h1>
-       {/* Aquí puedes agregar más contenido para el título */}
+       <h1>Featured Products</h1>
      </div>
      <div className={styles.scrollContainerWrapper}>
        <div className={styles.scrollContainer}>
