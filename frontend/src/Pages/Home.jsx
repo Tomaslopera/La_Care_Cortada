@@ -58,20 +58,6 @@ function Home() {
       </section>
 
       <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>Makeup Products</h2>
-        {featuredProducts.map((product, index) => (
-          <div key={index} className={styles.featuredItem}>{product}</div>
-        ))}
-      </section>
-
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>Upcoming Events</h2>
-        {upcomingEvents.map((event, index) => (
-          <div key={index} className={styles.featuredItem}>{event}</div>
-        ))}
-      </section>
-
-      <section className={styles.section}>
         <h2 className={styles.sectionTitle}>About the Brand</h2>
         <p className={styles.welcomeParagraph}>
           Founded by the infamous Andrea Mesa, La Care Cortada is not your average makeup brand. It represents the fierce, the rebellious, and those unafraid to make a statement. Andrea’s journey from the streets to stardom has shaped the brand’s unique identity, blending luxury makeup with an edgy, underground vibe.

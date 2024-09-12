@@ -1,40 +1,43 @@
-/* Estilo del contenedor principal */
 .container {
  display: flex;
  width: 100%;
 }
+
 .container h1 {
- color: #2a0549;
+ color: #fff;
  font-size: 2rem;
 }
 
 
-/* Estilo de la sección del título */
 .titleSection {
  flex: 1;
  padding: 10px;
+ color: #fff;
+ background-image: url('../Photos/backMain.jpg');
+ background-size: cover;
+ background-position: center;
+ align-items: center;
+ display: flex;
+  justify-content: center;
 }
 
-/* Estilo del contenedor de la barra de desplazamiento */
 .scrollContainerWrapper {
  flex: 1;
- max-width: 80%; /* Ocupa un ancho máximo del 80% del contenedor */
- overflow: hidden; /* Oculta el scroll vertical */
+ max-width: 80%; 
+ overflow: hidden; 
 }
 
-/* Estilo del contenedor de productos */
 .scrollContainer {
  display: flex;
- overflow-x: auto; /* Activa el scroll horizontal */
- overflow-y: hidden; /* Oculta el scroll vertical */
- gap: 20px; /* Espaciado entre los elementos */
+ overflow-x: auto; 
+ overflow-y: hidden; 
+ gap: 20px; 
  padding: 20px;
- scrollbar-width: thin; /* Scrollbar delgado para Firefox */
- scrollbar-color: #000 transparent; /* Color negro para el scrollbar y transparente para la pista */
+ scrollbar-width: thin; 
+ scrollbar-color: #000 transparent; 
 }
 
 
-/* Estilo de las tarjetas de productos */
 .productCard {
  width: 250px;
  padding: 1rem;
@@ -43,7 +46,7 @@
  border-radius: 8px;
  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
  text-align: center;
- flex-shrink: 0; /* Evita que las tarjetas se reduzcan cuando no caben */
+ flex-shrink: 0; 
 }
 
 .productImage {
@@ -63,11 +66,35 @@
 .productDescription {
  font-size: 0.9rem;
  color: #666;
- margin-bottom: 10px;
+ margin-bottom: 0px;
+ max-height: 50px; /* Altura máxima para la descripción */
+ overflow: hidden;
 }
 
-.productPrice {
- font-size: 1rem;
- font-weight: bold;
- color: #333;
+
+@media (max-width: 768px) {
+ .container {
+   flex-direction: column; /* Cambia el diseño a columnas */
+ }
+
+ .titleSection {
+   max-width: 100%; /* El título ocupa el 100% del ancho */
+   text-align: center; /* Centra el texto del título */
+ }
+
+ .scrollContainerWrapper {
+   max-width: 100%; /* Los productos ocupan el 100% del ancho */
+ }
+
+ .productImage {
+  width: 100%;
+  max-height: 200px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+ }
+
+ .productCard {
+  height: auto;
+   width: 100%; /* Las tarjetas de productos ocupan el 100% del ancho */
+ }
 }
