@@ -1,5 +1,9 @@
 # La Care Cortada - Web Management Platform
 
+## Made By
+> Pedro Sierra
+> Tomás Lopera
+
 ## Project Overview
 This project is a fictional web platform developed using **Vite** and **React**. The platform is designed for Andrea Mesa, also known as "La Care Cortada," a high-profile figure in the fictional makeup and fashion industry. The website serves as a management tool for her various business ventures, including model management, makeup product sales, fashion events, and exclusive memberships. The web page reflects the complexity of Andrea's empire, including her involvement in businesses that are not strictly legal.
 
