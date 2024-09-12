@@ -2,6 +2,7 @@
 
 ## Made By
 > Pedro Sierra
+
 > Tomás Lopera
 
 ## Project Overview
