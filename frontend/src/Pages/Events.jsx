@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/Events.module.css';
+import styles from '../Styles/Events.module.css';
 
 const events = [
   { name: 'Event 1', date: '01/01/2024', location: 'City Hall', models: 'Model 1, Model 2', products: 'Product 1, Product 2' },

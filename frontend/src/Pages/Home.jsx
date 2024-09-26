@@ -1,8 +1,8 @@
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import styles from '../styles/Home.module.css';
+import styles from '../Styles/Home.module.css';
 import ProductosDestacados from "../Components/ProductosDestacados";
-import img1 from '../Photos/Ppl/img1.jpg';
+import img1 from '../Photos/Ppl/Img1.jpg';
 import img2 from '../Photos/Ppl/img2.jpg';
 import Slider from "react-slick";
 import model1 from '../Photos/Modelos/model1.jpg';

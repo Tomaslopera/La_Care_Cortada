@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '../styles/ManageModels.module.css';
+import styles from '../Styles/ManageModels.module.css';
 
 const initialModels = [
   { id: 1, name: 'Model A', photos: 'http://example.com/photo1.jpg', portfolio: 'http://example.com/portfolio1', bookingInfo: 'Booking info A' },

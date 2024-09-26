@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from '../styles/PhotoSales.module.css';
+import styles from '../Styles/PhotoSales.module.css';
 
 const photoSales = [
   {

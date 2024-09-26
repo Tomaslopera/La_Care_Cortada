@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '../styles/ManagePhotos.module.css';
+import styles from '../Styles/ManagePhotos.module.css';
 
 const initialPhotos = [
   { id: 1, title: 'Photo 1', price: '$10', image: 'photo1.jpg' },

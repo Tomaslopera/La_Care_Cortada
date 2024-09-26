@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
 import styles from '../Styles/ProductosDestacados.module.css';
 import  { useState } from 'react';
-import superstayMatteInk from '../photos/products/superstay-matte-ink.webp';
-import fentyProFiltrFoundation from '../photos/products/fenty-pro-filtr-foundation.png';
-import nakedHeatPalette from '../photos/products/naked-heat-palette.jpg';
-import narsCreamyConcealer from '../photos/products/nars-creamy-concealer.jpg'
-import macRubyWoo from '../photos/products/mac-ruby-woo.avif'
-import tarteShapeTape from '../photos/products/tarte-shape-tape.webp'
-import airbrushFlawlessFoundation from '../photos/products/airbrush-flawless-foundation.avif'
-import browWiz from '../photos/products/brow-wiz.webp'
+import superstayMatteInk from '../Photos/products/superstay-matte-ink.webp';
+import fentyProFiltrFoundation from '../Photos/products/fenty-pro-filtr-foundation.png';
+import nakedHeatPalette from '../Photos/products/naked-heat-palette.jpg';
+import narsCreamyConcealer from '../Photos/products/nars-creamy-concealer.jpg'
+import macRubyWoo from '../Photos/products/mac-ruby-woo.avif'
+import tarteShapeTape from '../Photos/products/tarte-shape-tape.webp'
+import airbrushFlawlessFoundation from '../Photos/products/airbrush-flawless-foundation.avif'
+import browWiz from '../Photos/products/brow-wiz.webp'
 
 const products = [
   { name: 'Maybelline SuperStay Matte Ink', description: 'Long-lasting liquid lipstick with a matte finish.', price: '$20', image: superstayMatteInk, category: 'Lipsticks' },
@@ -25,8 +25,7 @@ function ProductosDestacados() {
  return (
    <div className={styles.container}>
      <div className={styles.titleSection}>
-       <h1>Productos Destacados</h1>
-       {/* Aquí puedes agregar más contenido para el título */}
+       <h1>Featured Products</h1>
      </div>
      <div className={styles.scrollContainerWrapper}>
        <div className={styles.scrollContainer}>

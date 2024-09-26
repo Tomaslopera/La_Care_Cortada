@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '../styles/ManageEvents.module.css';
+import styles from '../Styles/ManageEvents.module.css';
 
 const initialEvents = [
   { id: 1, name: 'Event 1', date: '01/01/2024', location: 'City Hall', models: 'Model 1, Model 2', products: 'Product 1, Product 2' },
