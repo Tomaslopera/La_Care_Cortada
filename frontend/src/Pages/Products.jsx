@@ -1,5 +1,6 @@
 import  { useState } from 'react';
 import styles from '../Styles/Products.module.css';
+import { useNavigate } from "react-router-dom";
 import superstayMatteInk from '../Photos/products/superstay-matte-ink.webp';
 import fentyProFiltrFoundation from '../Photos/products/fenty-pro-filtr-foundation.png';
 import nakedHeatPalette from '../Photos/products/naked-heat-palette.jpg';
@@ -21,8 +22,13 @@ const products = [
 ]
 
 
-function Products() {
+const Products= () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const { searchProduct, getAllProducts, getProduct } = useUser()
+  const { newMessage } = useMessage();
+  const [ productos, setProductos ] = useState([])
+  const [ nombre, setNombre ] = useState("")
+  const navigate = useNavigate();
 
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);

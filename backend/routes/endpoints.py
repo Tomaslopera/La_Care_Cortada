@@ -51,15 +51,20 @@ def sign_up(u: User):
 @endpoints.post("/login", tags=["users"], description="Login")
 def log_in(email: str, password: str):
     try:
-        consulta = text('SELECT * FROM Users WHERE Users.email = :email')
-        user = session.execute(consulta, {'email': email}).first()
+        consulta = text('SELECT id, first_name, last_name, email FROM Users WHERE Users.email = :email')
+        user = session.execute(consulta, {'email': email}).first()._asdict()
         if user:
             consulta = text('SELECT password FROM Users WHERE Users.email = :email')
             stored_password = session.execute(consulta, {'email': email}).scalar()
+            print(stored_password)
             if pwd_context.verify(password, stored_password):
-                consulta = text('SELECT id FROM Users WHERE Users.email = :email')
-                user_id = session.execute(consulta, {'email': email}).scalar()
-                return user_id
+                user_data = {
+                    "id": user["id"],
+                    "email": user['email'],
+                    "first name": user['first_name'],
+                    "last name": user['last_name']
+                }
+                return user_data
         raise HTTPException(status_code=401, detail="Invalid credentials")
     except Exception as e:
         print(f"Error al insertar en la base de datos: {e}")
@@ -69,7 +74,7 @@ def log_in(email: str, password: str):
 
 
 # Crear productos        
-@endpoints.post("/products", tags=["products"], description="Create a new product")
+@endpoints.post("/add_products", tags=["products"], description="Create a new product")
 def create_product(p: Product):
     try:
         new_id = str(uuid.uuid4())
