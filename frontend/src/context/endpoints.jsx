@@ -137,6 +137,47 @@ export const UserContextProvider = (props) => {
             console.log("Intentelo más tarde")
         }
     }
+    const addModel = async (name, photos, portfolio, booking_info) => {
+        try {
+            const response = await axios.post(`${API_BASE_URL}/models`, {
+                name,
+                photos,
+                portfolio,
+                booking_info
+            });
+    
+            if (response.data == null) return "Modelo no creado";
+            return response.data;
+        } catch (error) {
+            console.error(error)
+            console.log("Inténtelo más tarde")
+        }
+    }
+    
+
+    
+    const getAllModels = async () => {
+        try {
+            const response = await axios.get(`${API_BASE_URL}/models`)
+    
+            if (response.data == null) return "No existen modelos";
+            return response.data;
+        } catch (error) {
+            console.error(error)
+            console.log("Inténtelo más tarde")
+        }
+    }
+
+    const updateModel = async (id, updatedData) => {
+        try {
+            const response = await axios.put(`${API_BASE_URL}/models/${id}`, updatedData);
+            if (response.data == null) return "Modelo no actualizado";
+            return response.data;
+        } catch (error) {
+            console.error(error);
+            console.log("Intentelo más tarde");
+        }
+    }
 
     return (
         <userContext.Provider
@@ -147,9 +188,11 @@ export const UserContextProvider = (props) => {
                 login,
                 setUser,
                 addProduct,
-                searchProduct,
                 getAllProducts,
+                updateModel,
                 getProduct,
+                addModel,
+                getAllModels,
                 firstNameUsuario,
                 emailUsuario
             }}
