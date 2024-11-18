@@ -12,6 +12,7 @@ export const useUser = () => {
     return context
 }
 
+
 export const UserContextProvider = (props) => {
     const [user, setUser] = useState(null);
     const [firstNameUsuario, setNombreUsuario] = useState(localStorage.getItem("firstNameUsuario") || "Anonymous");
