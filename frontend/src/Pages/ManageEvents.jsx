@@ -1,13 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '../Styles/ManageEvents.module.css';
-
-const initialEvents = [
-  { id: 1, name: 'Event 1', date: '01/01/2024', location: 'City Hall', models: 'Model 1, Model 2', products: 'Product 1, Product 2' },
-  { id: 2, name: 'Event 2', date: '02/01/2024', location: 'Expo Center', models: 'Model 3, Model 4', products: 'Product 3, Product 4' },
-];
+import { useUser } from '../context/endpoints.jsx';
 
 function ManageEvents() {
-  const [events, setEvents] = useState(initialEvents);
+  const { getAllEvents, createEvent, updateEvent } = useUser();
+  const [events, setEvents] = useState([]);
   const [editEvent, setEditEvent] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
@@ -17,36 +14,71 @@ function ManageEvents() {
     products: '',
   });
 
+  // Obtener eventos desde el backend al cargar el componente
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const allEvents = await getAllEvents();
+        if (Array.isArray(allEvents)) {
+          setEvents(allEvents);
+        } else {
+          console.error('Unexpected response format:', allEvents);
+          setEvents([]); // Asegura que sea un arreglo vacío
+        }
+      } catch (error) {
+        console.error('Error fetching events:', error);
+        setEvents([]); // Evita errores de renderizado
+      }
+    };
+    fetchEvents();
+  }, [getAllEvents]);
+  
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (editEvent) {
-      setEvents(events.map(event =>
-        event.id === editEvent.id ? { ...editEvent, ...formData } : event
-      ));
-    } else {
-      setEvents([...events, { id: Date.now(), ...formData }]);
+    try {
+      if (editEvent) {
+        // Actualizar evento existente
+        const updatedEvent = await updateEvent(editEvent.id, {
+          ...formData,
+          models: formData.models.split(',').map((model) => model.trim()),
+          products: formData.products.split(',').map((product) => product.trim()),
+        });
+        setEvents(events.map(event => event.id === editEvent.id ? updatedEvent : event));
+      } else {
+        // Crear nuevo evento
+        const newEvent = await createEvent({
+          ...formData,
+          models: formData.models.split(',').map((model) => model.trim()),
+          products: formData.products.split(',').map((product) => product.trim()),
+        });
+        setEvents([...events, newEvent]);
+      }
+      // Limpiar formulario y estado de edición
+      setFormData({ name: '', date: '', location: '', models: '', products: '' });
+      setEditEvent(null);
+    } catch (error) {
+      console.error('Error saving event:', error);
     }
-    setFormData({ name: '', date: '', location: '', models: '', products: '' });
-    setEditEvent(null);
   };
 
   const handleEdit = (event) => {
     setEditEvent(event);
     setFormData({
-      name: event.name,
-      date: event.date,
-      location: event.location,
+      name: event.event_name,
+      date: event.event_date,
+      location: event.event_location,
       models: event.models,
       products: event.products,
     });
   };
 
   const handleDelete = (id) => {
-    setEvents(events.filter(event => event.id !== id));
+    console.log('Delete functionality to be implemented.');
   };
 
   return (
@@ -62,17 +94,18 @@ function ManageEvents() {
             onChange={handleChange}
             className={styles.input}
             placeholder="Event Name"
+            required
           />
         </label>
         <label className={styles.label}>
           Date
           <input
-            type="text"
+            type="date"
             name="date"
             value={formData.date}
             onChange={handleChange}
             className={styles.input}
-            placeholder="Event Date"
+            required
           />
         </label>
         <label className={styles.label}>
@@ -84,28 +117,29 @@ function ManageEvents() {
             onChange={handleChange}
             className={styles.input}
             placeholder="Event Location"
+            required
           />
         </label>
         <label className={styles.label}>
-          Models
+          Models (comma-separated)
           <input
             type="text"
             name="models"
             value={formData.models}
             onChange={handleChange}
             className={styles.input}
-            placeholder="Event Models"
+            placeholder="Model 1, Model 2"
           />
         </label>
         <label className={styles.label}>
-          Products
+          Products (comma-separated)
           <input
             type="text"
             name="products"
             value={formData.products}
             onChange={handleChange}
             className={styles.input}
-            placeholder="Event Products"
+            placeholder="Product 1, Product 2"
           />
         </label>
         <button type="submit" className={styles.button}>
@@ -113,18 +147,24 @@ function ManageEvents() {
         </button>
       </form>
       <div className={styles.eventsList}>
-        {events.map(event => (
-          <div key={event.id} className={styles.eventItem}>
-            <h2>{event.name}</h2>
-            <p><strong>Date:</strong> {event.date}</p>
-            <p><strong>Location:</strong> {event.location}</p>
-            <p><strong>Models:</strong> {event.models}</p>
-            <p><strong>Products:</strong> {event.products}</p>
-            <button onClick={() => handleEdit(event)} className={styles.editButton}>Edit</button>
-            <button onClick={() => handleDelete(event.id)} className={styles.deleteButton}>Delete</button>
-          </div>
-        ))}
-      </div>
+  {events.length > 0 ? (
+    events.map((event, index) => (
+      event ? (
+        <div key={index} className={styles.eventItem}>
+          <h2>{event.event_name}</h2>
+          <p><strong>Date:</strong> {event.event_date}</p>
+          <p><strong>Location:</strong> {event.event_location}</p>
+          <p><strong>Models:</strong> {event.models || 'No models listed'}</p>
+          <p><strong>Products:</strong> {event.products || 'No products listed'}</p>
+        </div>
+      ) : (
+        <p key={index} className={styles.error}>Invalid event data</p>
+      )
+    ))
+  ) : (
+    <p>No events to display.</p>
+  )}
+</div>
     </div>
   );
 }

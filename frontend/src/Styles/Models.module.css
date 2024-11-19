@@ -22,7 +22,7 @@
   padding: 1rem;
   background-color: rgba(255, 255, 255, 0.8); /* Blanco con transparencia */
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   text-align: center;
 }
 
@@ -58,3 +58,30 @@
   color: #fff;
 }
 
+.filter {
+  margin-bottom: 2rem;
+  text-align: center;
+  color: rgba(40, 3, 70); 
+}
+
+.filter label {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+.filterSelect {
+  padding: 0.5rem;
+  border: 1px solid #7b2cbf;
+  border-radius: 5px;
+  background-color: #f4f0f7;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+  color: #333; 
+}
+
+.filterSelect:hover,
+.filterSelect:focus {
+  border-color: #5a1e8c; 
+  background-color: #e0d8f1;
+}

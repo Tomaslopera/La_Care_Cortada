@@ -14,7 +14,7 @@
   padding: 1.5rem;
   margin-bottom: 2rem;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .photoItem h2 {
@@ -68,4 +68,31 @@
 .addButton:hover {
   background-color: #8ed7d8;
   color: #2a0549;
+}
+.filter {
+  margin-bottom: 2rem;
+  text-align: center;
+  color: rgba(40, 3, 70); 
+}
+
+.filter label {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+.filterSelect {
+  padding: 0.5rem;
+  border: 1px solid #7b2cbf;
+  border-radius: 5px;
+  background-color: #f4f0f7;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+  color: #333; 
+}
+
+.filterSelect:hover,
+.filterSelect:focus {
+  border-color: #5a1e8c; 
+  background-color: #e0d8f1;
 }

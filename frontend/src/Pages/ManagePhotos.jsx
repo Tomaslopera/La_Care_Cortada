@@ -1,13 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useUser } from '../context/endpoints.jsx';
 import styles from '../Styles/ManagePhotos.module.css';
 
-const initialPhotos = [
-  { id: 1, title: 'Photo 1', price: '$10', image: 'photo1.jpg' },
-  { id: 2, title: 'Photo 2', price: '$15', image: 'photo2.jpg' },
-];
-
 function ManagePhotos() {
-  const [photos, setPhotos] = useState(initialPhotos);
+  const { getAllPhotos, addPhoto, updatePhoto, getPhotoById } = useUser(); // Accede a las funciones del contexto
+  const [photos, setPhotos] = useState([]);
   const [editPhoto, setEditPhoto] = useState(null);
   const [formData, setFormData] = useState({
     title: '',
@@ -15,22 +12,66 @@ function ManagePhotos() {
     image: '',
   });
 
+  useEffect(() => {
+    // Obtener todas las fotos cuando se carga el componente
+    const fetchPhotos = async () => {
+      const photosData = await getAllPhotos();
+      if (photosData) {
+        setPhotos(photosData);
+      }
+    };
+
+    fetchPhotos();
+  }, [getAllPhotos]);
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const photoData = {
+      title: formData.title,
+      description: formData.description, // Añadir la descripción
+      digital_price: formData.digital_price, // Añadir el precio digital
+      physical_price: formData.physical_price, // Añadir el precio físico
+      categories: formData.categories, // Añadir categorías
+      tags: formData.tags, // Añadir tags
+      available_formats: formData.available_formats, // Añadir formatos disponibles
+      photographer: formData.photographer, // Añadir fotógrafo
+    };
+
     if (editPhoto) {
-      setPhotos(photos.map(photo =>
-        photo.id === editPhoto.id ? { ...editPhoto, ...formData } : photo
-      ));
+      // Si estamos editando una foto, actualizamos
+      const updatedPhoto = await updatePhoto(editPhoto.id, photoData);
+      if (updatedPhoto) {
+        setPhotos(photos.map(photo =>
+          photo.id === editPhoto.id ? updatedPhoto : photo
+        ));
+      }
     } else {
-      setPhotos([...photos, { id: Date.now(), ...formData }]);
+      // Si estamos creando una nueva foto
+      const newPhoto = await addPhoto(photoData);
+      if (newPhoto) {
+        setPhotos([...photos, newPhoto]);
+      }
     }
-    setFormData({ title: '', price: '', image: '' });
+
+    setFormData({
+      title: '',
+      price: '',
+      image: '',
+      description: '',
+      digital_price: '',
+      physical_price: '',
+      categories: '',
+      tags: '',
+      available_formats: '',
+      photographer: ''
+    });
     setEditPhoto(null);
-  };
+};
 
   const handleEdit = (photo) => {
     setEditPhoto(photo);
@@ -41,8 +82,15 @@ function ManagePhotos() {
     });
   };
 
-  const handleDelete = (id) => {
-    setPhotos(photos.filter(photo => photo.id !== id));
+  const handleDelete = async (id) => {
+    try {
+      const response = await axios.delete(`${API_BASE_URL}/photos/${id}`);
+      if (response.data) {
+        setPhotos(photos.filter(photo => photo.id !== id));
+      }
+    } catch (error) {
+      console.error("Error deleting photo:", error);
+    }
   };
 
   return (
@@ -60,28 +108,91 @@ function ManagePhotos() {
             placeholder="Photo Title"
           />
         </label>
+
         <label className={styles.label}>
-          Price
+          Description
           <input
             type="text"
-            name="price"
-            value={formData.price}
+            name="description"
+            value={formData.description}
             onChange={handleChange}
             className={styles.input}
-            placeholder="Photo Price"
+            placeholder="Photo Description"
           />
         </label>
+
         <label className={styles.label}>
-          Image URL
+          Digital Price
           <input
             type="text"
-            name="image"
-            value={formData.image}
+            name="digital_price"
+            value={formData.digital_price}
             onChange={handleChange}
             className={styles.input}
-            placeholder="Photo Image URL"
+            placeholder="Photo Digital Price"
           />
         </label>
+
+        <label className={styles.label}>
+          Physical Price
+          <input
+            type="text"
+            name="physical_price"
+            value={formData.physical_price}
+            onChange={handleChange}
+            className={styles.input}
+            placeholder="Photo Physical Price"
+          />
+        </label>
+
+        <label className={styles.label}>
+          Categories
+          <input
+            type="text"
+            name="categories"
+            value={formData.categories}
+            onChange={handleChange}
+            className={styles.input}
+            placeholder="Photo Categories"
+          />
+        </label>
+
+        <label className={styles.label}>
+          Tags
+          <input
+            type="text"
+            name="tags"
+            value={formData.tags}
+            onChange={handleChange}
+            className={styles.input}
+            placeholder="Photo Tags"
+          />
+        </label>
+
+        <label className={styles.label}>
+          Available Formats
+          <input
+            type="text"
+            name="available_formats"
+            value={formData.available_formats}
+            onChange={handleChange}
+            className={styles.input}
+            placeholder="Photo Available Formats"
+          />
+        </label>
+
+        <label className={styles.label}>
+          Photographer
+          <input
+            type="text"
+            name="photographer"
+            value={formData.photographer}
+            onChange={handleChange}
+            className={styles.input}
+            placeholder="Photographer Name"
+          />
+        </label>
+
         <button type="submit" className={styles.button}>
           {editPhoto ? 'Update Photo' : 'Add Photo'}
         </button>

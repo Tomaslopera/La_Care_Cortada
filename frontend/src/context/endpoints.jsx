@@ -178,6 +178,108 @@ export const UserContextProvider = (props) => {
             console.log("Intentelo más tarde");
         }
     }
+    const getAllEvents = async () => {
+        try {
+          const response = await axios.get("/events");
+          return response.data;
+        } catch (error) {
+          console.error("Error fetching events:", error);
+          return null;
+        }
+      }
+    
+      const getEventById = async (eventId) => {
+        try {
+          const response = await axios.get(`/events/${eventId}`);
+          return response.data;
+        } catch (error) {
+          console.error("Error fetching event by ID:", error);
+          return null;
+        }
+      }
+    
+      const createEvent = async (eventData) => {
+        try {
+          const response = await axios.post("/events", eventData);
+          return response.data;
+        } catch (error) {
+          console.error("Error creating event:", error);
+          return null;
+        }
+      }
+    
+      const updateEvent = async (eventId, eventData) => {
+        try {
+          const response = await axios.put(`/events/${eventId}`, eventData);
+          return response.data;
+        } catch (error) {
+          console.error("Error updating event:", error);
+          return null;
+        }
+      }
+
+      const addPhoto = async ({ title, description, digital_price, physical_price, categories, tags, available_formats, photographer }) => {
+        try {
+            const response = await axios.post(`${API_BASE_URL}/photos`, {
+                title,
+                description,
+                digital_price,
+                physical_price,
+                categories,
+                tags,
+                available_formats,
+                photographer
+            });
+
+            if (response.data == null) return "Foto no creada";
+
+            return response.data;
+        } catch (error) {
+            console.error(error);
+            console.log("Intentelo más tarde");
+        }
+    }
+
+    // Nueva función para obtener todas las fotos
+    const getAllPhotos = async () => {
+        try {
+            const response = await axios.get(`${API_BASE_URL}/photos`);
+
+            if (response.data == null) return "No existen fotos";
+
+            return response.data;
+        } catch (error) {
+            console.error(error);
+            console.log("Intentelo más tarde");
+        }
+    }
+    // Nueva función para obtener una foto por ID
+    const getPhotoById = async (id) => {
+        try {
+            const response = await axios.get(`${API_BASE_URL}/photos/${id}`);
+
+            if (response.data == null) return "Foto no encontrada";
+
+            return response.data;
+        } catch (error) {
+            console.error(error);
+            console.log("Intentelo más tarde");
+        }
+    }
+
+    // Nueva función para actualizar una foto
+    const updatePhoto = async (id, updatedData) => {
+        try {
+            const response = await axios.put(`${API_BASE_URL}/photos/${id}`, updatedData);
+
+            if (response.data == null) return "Foto no actualizada";
+
+            return response.data;
+        } catch (error) {
+            console.error(error);
+            console.log("Intentelo más tarde");
+        }
+    }
 
     return (
         <userContext.Provider
@@ -188,11 +290,19 @@ export const UserContextProvider = (props) => {
                 login,
                 setUser,
                 addProduct,
+                getAllEvents,
+                getEventById,
+                createEvent,
+                updateEvent,
                 getAllProducts,
                 updateModel,
                 getProduct,
                 addModel,
                 getAllModels,
+                addPhoto,
+                getAllPhotos,
+                getPhotoById,
+                updatePhoto,
                 firstNameUsuario,
                 emailUsuario
             }}
