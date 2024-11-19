@@ -1,8 +1,6 @@
-// src/pages/Cart.jsx
 import React from 'react';
 import styles from '../Styles/Cart.module.css';
 
-// Sample data for cart items
 const cartItems = [
   { title: 'Photo 1', price: '$10', quantity: 1 },
   { title: 'Photo 2', price: '$15', quantity: 2 },

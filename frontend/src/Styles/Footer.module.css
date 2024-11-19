@@ -66,23 +66,24 @@
 
     }
   }
-
   .linkButton {
     display: inline-block;
     padding: 0.8rem 1.5rem;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(40, 3, 70);
     color: #fff; 
     text-decoration: none;
     font-size: 1.2rem;
-    border-radius: 4px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.4s, color 0.4s, box-shadow 0.4s; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: transform 0.4s, box-shadow 0.4s;
+  
   }
   
   .linkButton:hover {
-    background-color: rgba(255, 255, 255, 0.4);
-    color: #000;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    color: #fff; 
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); 
+    
   }
   

@@ -1,37 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import styles from '../Styles/ManageProducts.module.css';
+import { useUser } from '../context/endpoints.jsx';
 
-const initialProducts = [
-  { id: 1, name: 'Product 1', description: 'Description of Product 1', price: '$20', image: 'product1.jpg', category: 'Lipsticks' },
-  { id: 2, name: 'Product 2', description: 'Description of Product 2', price: '$30', image: 'product2.jpg', category: 'Foundations' }
-];
-
-function ManageProducts() {
-  const [products, setProducts] = useState(initialProducts);
+const ManageProducts = () => {
+  const { addProduct, getAllProducts } = useUser();
+  const [products, setProducts] = useState([]);
   const [editProduct, setEditProduct] = useState(null);
   const [formData, setFormData] = useState({
-    name: '',
-    description: '',
-    price: '',
-    image: '',
-    category: ''
+      name: '',
+      description: '',
+      price: '',
+      image: '',
+      category: ''
   });
+  // Fetch products from backend
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const allProducts = await getAllProducts();
+      setProducts(allProducts);
+    };
+    fetchProducts();
+  }, [getAllProducts]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (editProduct) {
-      setProducts(products.map(product =>
-        product.id === editProduct.id ? { ...editProduct, ...formData } : product
-      ));
-    } else {
-      setProducts([...products, { id: Date.now(), ...formData }]);
+    try {
+      if (editProduct) {
+        // Update product logic (implement PUT request here)
+        console.log('Updating product...');
+      } else {
+        const newProduct = await addProduct(
+          formData.name,
+          formData.description,
+          formData.price,
+          formData.image,
+          formData.category
+        );
+        setProducts([...products, newProduct]);
+      }
+      setFormData({ name: '', description: '', price: '', image: '', category: '' });
+      setEditProduct(null);
+    } catch (error) {
+      console.error('Error saving product:', error);
     }
-    setFormData({ name: '', description: '', price: '', image: '', category: '' });
-    setEditProduct(null);
   };
 
   const handleEdit = (product) => {
@@ -46,7 +61,8 @@ function ManageProducts() {
   };
 
   const handleDelete = (id) => {
-    setProducts(products.filter(product => product.id !== id));
+    // Implement DELETE request logic here
+    console.log('Deleting product...');
   };
 
   return (
@@ -61,7 +77,7 @@ function ManageProducts() {
             value={formData.name}
             onChange={handleChange}
             className={styles.input}
-            placeholder='Product Name'
+            placeholder="Product Name"
           />
         </label>
         <label className={styles.label}>
@@ -72,7 +88,7 @@ function ManageProducts() {
             value={formData.description}
             onChange={handleChange}
             className={styles.input}
-            placeholder='Product Description'
+            placeholder="Product Description"
           />
         </label>
         <label className={styles.label}>
@@ -83,7 +99,7 @@ function ManageProducts() {
             value={formData.price}
             onChange={handleChange}
             className={styles.input}
-            placeholder='Product Price'
+            placeholder="Product Price"
           />
         </label>
         <label className={styles.label}>
@@ -94,7 +110,7 @@ function ManageProducts() {
             value={formData.image}
             onChange={handleChange}
             className={styles.input}
-            placeholder='Image URL'
+            placeholder="Image URL"
           />
         </label>
         <label className={styles.label}>
@@ -105,7 +121,7 @@ function ManageProducts() {
             value={formData.category}
             onChange={handleChange}
             className={styles.input}
-            placeholder='Product Category'
+            placeholder="Product Category"
           />
         </label>
         <button type="submit" className={styles.button}>
