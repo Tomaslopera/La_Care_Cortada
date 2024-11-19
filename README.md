@@ -69,3 +69,26 @@ To run this project locally, follow these steps:
 > Clone the repository
    ```bash
    git clone https://github.com/your-username/la-care-cortada.git
+
+**Backend**
+
+    cd backend
+
+> Descargar librerias:
+
+    pip install fastapi
+    pip install uvicorn
+    pip install sqlalchemy
+    pip instal pydantic
+    pip install bcrypt
+    pip install passlib
+    pip install pymysql
+
+> Levantar entorno de desarrollo:
+
+    uvicorn app:app --reload
+
+**MySQL**
+> Para el proyecto se utilizó MySQL Workbench para la visualización de las tablas de la Base de Datos
+
+    create database Care_Cortada;
