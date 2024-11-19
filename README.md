@@ -66,13 +66,10 @@ This project is a fictional web platform developed using **Vite** and **React**.
 ## Installation and Setup
 To run this project locally, follow these steps:
 
-> Clone the repository
-   ```bash
-   git clone https://github.com/your-username/la-care-cortada.git
+> Clone the repository:
 
-**Backend**
-
-    cd backend
+  **git clone https://github.com/your-username/la-care-cortada.git**
+  
 
 > Descargar librerias:
 
@@ -88,7 +85,7 @@ To run this project locally, follow these steps:
 
     uvicorn app:app --reload
 
-**MySQL**
-> Para el proyecto se utilizó MySQL Workbench para la visualización de las tablas de la Base de Datos
+> MySQL
+  Para el proyecto se utilizó MySQL Workbench para la visualización de las tablas de la Base de Datos
 
     create database Care_Cortada;
