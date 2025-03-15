@@ -68,7 +68,7 @@ To run this project locally, follow these steps:
 
 > Clone the repository:
 
-  **git clone https://github.com/your-username/la-care-cortada.git**
+  **git clone [https://github.com/your-username/la-care-cortada.git**](https://github.com/Tomaslopera/La_Care_Cortada.git)
   
 
 > Descargar librerias:
